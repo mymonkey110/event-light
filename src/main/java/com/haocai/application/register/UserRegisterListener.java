@@ -16,8 +16,6 @@ import javax.annotation.Resource;
  */
 @Service
 public class UserRegisterListener {
-    /*@Autowired
-    private UserEventPublisher userEventPublisher;*/
     @Resource
     private EmailSender emailSender;
 

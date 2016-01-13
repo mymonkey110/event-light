@@ -26,4 +26,10 @@ public class UserController {
         userService.login(name);
         return "login completed!";
     }
+
+    @RequestMapping(value = "/logout.do", method = RequestMethod.GET)
+    public String logout(String name) {
+        userService.logout(name);
+        return "logout completed!";
+    }
 }
