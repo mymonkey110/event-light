@@ -7,9 +7,10 @@ import java.util.concurrent.Executors;
 
 
 /**
+ * Guava事件发布器实现
  * Created by Michael Jiang on 16/1/12.
  */
-public abstract class GuavaDomainEventPublisher<T> implements DomainEventPublisher<T> {
+public abstract class GuavaDomainEventPublisher implements DomainEventPublisher {
     private EventBus syncBus = new EventBus(identify());
     private EventBus asyncBus = new AsyncEventBus(identify(), Executors.newFixedThreadPool(1));
 
@@ -20,12 +21,13 @@ public abstract class GuavaDomainEventPublisher<T> implements DomainEventPublish
     }
 
     @Override
-    public void publish(T event) {
+    public void publish(DomainEvent event) {
         syncBus.post(event);
     }
 
     @Override
-    public void asyncPublish(T event) {
+    public void asyncPublish(DomainEvent event) {
         asyncBus.post(event);
     }
+
 }
