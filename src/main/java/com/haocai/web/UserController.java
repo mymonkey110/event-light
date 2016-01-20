@@ -15,7 +15,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/register.do", method = RequestMethod.POST)
+    @RequestMapping(value = "/register.do", method = RequestMethod.GET)
     public String register(String name, Integer age) {
         userService.register(name, age);
         return "register completed!";
