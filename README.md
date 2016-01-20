@@ -8,7 +8,9 @@
 
 #### 运行方法
 
-
+    > git clone https://github.com/mymonkey110/event-light.git
+    > cd event-light
+    > mvn spring-boot:run
 
 #### 工程结构
 
@@ -39,6 +41,9 @@
 
     观察日志发现,用户登出监听器和request的处理在同一个线程中,说明Spring自带的是同步的.
 
+  设计初衷见我的博客-[实现领域事件](http://michael-j.xyz/2016/01/19/实现领域事件/)
+
+#### MIT LICENSE
 
 
 
